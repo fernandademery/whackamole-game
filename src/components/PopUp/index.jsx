@@ -24,9 +24,9 @@ export default function PopUp(props) {
   return (
     <Popup open={showPopup} closeOnDocumentClick onClose={onClosePopup}>
       <div className="modal">
-        <a className="close" onClick={onClosePopup}>
+        <button className="close" onClick={onClosePopup}>
           &times;
-        </a>
+        </button>
         {message}
       </div>
     </Popup>
