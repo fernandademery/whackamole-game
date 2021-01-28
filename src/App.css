@@ -1,0 +1,173 @@
+.App {
+  text-align: center;
+}
+
+h1 {
+  font-family: "Amatic SC", cursive;
+  text-transform: uppercase;
+  font-size: 80px;
+  background-color: #fdf892;
+  margin: 0;
+  padding: 2% 0;
+}
+
+h1 span {
+  margin-left: 1%;
+  background-color: #feec28;
+  padding: 0 2%;
+  border-radius: 10px;
+  opacity: 0.8;
+}
+
+div.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  font-size: 30px;
+  font-family: "Montserrat", sans-serif;
+  background-color: #d473d3;
+  color: #480040;
+  border: none;
+  border-radius: 8px;
+  margin: 0 30px;
+  padding: 8px 13px;
+  font-weight: 600;
+  cursor: pointer;
+  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
+}
+
+button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+div.playing-options {
+  background-color: #f8daef;
+  width: 60%;
+  color: #480040;
+  opacity: 0.8;
+  margin: 0 auto;
+}
+
+div.playing-options {
+  visibility: hidden;
+  width: 70%;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+  position: absolute;
+  left: 15%;
+  top: 105%;
+  text-align: left;
+  background-color: lightyellow;
+  color: #480040;
+  font-weight: 600;
+  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 3px;
+
+  z-index: 1;
+}
+
+div.playing-options.display-list {
+  opacity: 1;
+  visibility: visible;
+}
+
+div.actions-container {
+  position: relative;
+}
+
+div.playing-options div {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  align-items: center;
+  padding-left: 8%;
+}
+
+div.playing-options div:hover {
+  background-color: #480040;
+  color: lightyellow;
+}
+
+.game {
+  width: 600px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.hole {
+  flex: 1 0 33.33%;
+  overflow: hidden;
+  position: relative;
+}
+
+.hole:after {
+  display: block;
+  background: url(./components/Workspace/components/dirt.svg) bottom center
+    no-repeat;
+  background-size: contain;
+  content: "";
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  z-index: 2;
+  bottom: -30px;
+}
+
+.mole {
+  background: url("./components/Workspace/components/mole.svg") bottom center
+    no-repeat;
+  background-size: 60%;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  transition: all 0.4s;
+}
+
+.hole.up .mole {
+  top: 0;
+}
+
+div.modal {
+  width: 30rem;
+  margin: auto;
+  background-color: #f8daef;
+  padding: 8% 6%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+div.modal a {
+  position: absolute;
+  top: 0;
+  right: 2%;
+  font-size: 50px;
+  cursor: pointer;
+  color: #480040;
+}
+
+div.modal a:hover {
+  color: #d473d3;
+}
+
+div.modal div h6 {
+  font-family: "Amatic SC", cursive;
+  font-size: 50px;
+  margin: 0;
+  color: #480040;
+  padding-bottom: 6%;
+  text-align: center;
+}
+
+div.modal div {
+  font-size: 36px;
+  color: #d473d3;
+  text-align: center;
+  font-weight: 300;
+}
