@@ -229,4 +229,8 @@ div.modal div {
     text-align: center;
     font-weight: 300;
   }
+
+  div.clock-container {
+    margin-top: 5%;
+  }
 }

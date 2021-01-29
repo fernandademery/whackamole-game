@@ -8,6 +8,7 @@ import Heading from "../src/components/Heading";
 import Menu from "../src/components/Menu";
 import Workspace from "../src/components/Workspace";
 import PopUp from "../src/components/PopUp";
+import Clock from "../src/components/Clock";
 
 export default class App extends Component {
   constructor(props) {
@@ -22,6 +23,7 @@ export default class App extends Component {
       difficulty: "medium",
       time: 10000,
       showPopup: false,
+      gameStarted: false,
     };
   }
 
@@ -70,9 +72,9 @@ export default class App extends Component {
   startGame = () => {
     const { time } = this.state;
     const endTime = Number(time) + 3000;
-    this.setState({ score: 0, timeUp: false }, this.peep());
+    this.setState({ score: 0, timeUp: false, gameStarted: true }, this.peep());
     setTimeout(() => {
-      this.setState({ timeUp: true, showPopup: true });
+      this.setState({ timeUp: true, gameStarted: false });
     }, time);
     setTimeout(() => {
       this.setState({ showPopup: true });
@@ -105,7 +107,7 @@ export default class App extends Component {
   };
 
   render() {
-    const { holes, holeUp, score, showPopup } = this.state;
+    const { holes, holeUp, score, showPopup, time, gameStarted } = this.state;
 
     return (
       <div className="App">
@@ -121,6 +123,7 @@ export default class App extends Component {
           onClosePopup={this.onClosePopup}
           score={score}
         />
+        {gameStarted && <Clock time={time} />}
       </div>
     );
   }
