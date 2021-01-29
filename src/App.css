@@ -143,16 +143,17 @@ div.modal {
   align-items: center;
 }
 
-div.modal a {
+div.modal button {
   position: absolute;
-  top: 0;
-  right: 2%;
+  top: -3%;
+  right: -5%;
   font-size: 50px;
   cursor: pointer;
   color: #480040;
+  background-color: transparent;
 }
 
-div.modal a:hover {
+div.modal button:hover {
   color: #d473d3;
 }
 
