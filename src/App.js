@@ -34,7 +34,6 @@ export default class App extends Component {
     const idx = Math.floor(Math.random() * holes.length);
     const hole = holes[idx];
     if (hole === lastHole) {
-      console.log("same");
       return this.randomHole(holes);
     }
     this.setState({ lastHole: hole });
@@ -70,13 +69,14 @@ export default class App extends Component {
 
   startGame = () => {
     const { time } = this.state;
+    const endTime = Number(time) + 1000;
     this.setState({ score: 0, timeUp: false }, this.peep());
     setTimeout(() => {
-      this.setState({ timeUp: true });
+      this.setState({ timeUp: true, showPopup: true });
     }, time);
     setTimeout(() => {
       this.setState({ showPopup: true });
-    }, time + 1000);
+    }, endTime);
   };
 
   bonk = (e) => {
@@ -106,7 +106,7 @@ export default class App extends Component {
 
   render() {
     const { holes, holeUp, score, showPopup } = this.state;
-    console.log(this.state.difficulty, this.state.time);
+
     return (
       <div className="App">
         <Heading score={score} />
