@@ -90,7 +90,7 @@ div.playing-options div:hover {
 }
 
 .game {
-  width: 100%;
+  width: 600px;
   height: 400px;
   display: flex;
   flex-wrap: wrap;
