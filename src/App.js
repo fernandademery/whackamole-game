@@ -69,7 +69,7 @@ export default class App extends Component {
 
   startGame = () => {
     const { time } = this.state;
-    const endTime = Number(time) + 1000;
+    const endTime = Number(time) + 2000;
     this.setState({ score: 0, timeUp: false }, this.peep());
     setTimeout(() => {
       this.setState({ timeUp: true, showPopup: true });
